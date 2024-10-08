@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-import type {Config} from 'jest';
+import type { Config } from "jest";
 
 const config: Config = {
   // All imported modules in your tests should be mocked automatically
@@ -88,7 +88,11 @@ const config: Config = {
   //   "json",
   //   "node"
   // ],
-  rootDir: 'src',
+  rootDir: "src",
+  testRegex: ".*\\..*spec\\.ts$",
+  transform: {
+    "^.+\\.(t|j)s$": "@swc/jest",
+  },
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   // moduleNameMapper: {},
